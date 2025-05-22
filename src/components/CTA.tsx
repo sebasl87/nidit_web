@@ -5,7 +5,14 @@ import PlayStoreButton from "./PlayStoreButton"
 
 const CTA: React.FC = () => {
     return (
-        <section id="cta" className="mt-10 mb-5 lg:my-20">
+        <section id="cta" className="mt-10 lg:my-20">
+            <div className="absolute inset-0 -z-20">
+                <img
+                    src="/bg.webp"
+                    alt="Background bubbles"
+                    className="w-full h-full object-cover rounded-3xl"
+                />
+            </div>
             <div className="relative h-full w-full z-10 mx-auto py-12 sm:py-20">
                 <div className="h-full w-full">
                     <div className="rounded-3xl opacity-95 absolute inset-0 -z-10 h-full w-full bg-[#050a02] bg-[linear-gradient(to_right,#12170f_1px,transparent_1px),linear-gradient(to_bottom,#12170f_1px,transparent_1px)] bg-[size:6rem_4rem]">

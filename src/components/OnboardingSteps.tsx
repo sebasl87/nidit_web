@@ -18,7 +18,7 @@ const steps = [
 
 const OnboardingSteps = () => {
     return (
-        <section className="bg-lilac py-20 text-center rounded-3xl">
+        <section className="bg-lilac py-20 text-center rounded-3xl mb-20">
             <Container>
                 <h2 className="text-3xl font-bold text-dark mb-12">Cómo funciona Nidit</h2>
 

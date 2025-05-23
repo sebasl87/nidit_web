@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const DownloadSection = () => {
     return (
-        <section id="download" className="mt-10 lg:my-20">
+        <section id="download" className="mt-10 my-20">
 
             <div className="relative h-full w-full z-10 mx-auto py-12 sm:py-20">
                 <div className="h-full w-full">

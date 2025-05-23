@@ -3,6 +3,7 @@ import Container from "@/components/Container";
 
 import DownloadSection from "@/components/DownloadSection";
 import OnboardingSteps from "@/components/OnboardingSteps";
+import FaqSection from "@/components/FaqSection";
 
 
 const HomePage: React.FC = () => {
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
                 <Container>
                     <DownloadSection/>
                     <OnboardingSteps/>
+                    <FaqSection />
                 </Container>
             </div>
         </>

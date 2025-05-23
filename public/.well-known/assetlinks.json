@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.niditapp",
+      "sha256_cert_fingerprints": [
+        "51:BA:15:53:DD:52:DC:8F:7C:65:39:5F:9F:10:81:5B:6A:C1:F4:A2:69:F6:06:3B:9A:F2:23:46:88:B5:C6:32"
+      ]
+    }
+  }
+]

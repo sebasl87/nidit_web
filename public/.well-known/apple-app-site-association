@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "CVNJWZQMLP.com.niditapp",
+        "paths": ["/share/*"]
+      }
+    ]
+  }
+}

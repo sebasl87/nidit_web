@@ -1,37 +1,66 @@
 import Link from 'next/link';
-import React from 'react';
-import { FaFingerprint } from 'react-icons/fa';
+import Image from 'next/image';
+import Container from './Container';
 
-import { siteDetails } from '@/data/siteDetails';
-import { footerDetails } from '@/data/footer';
-
-
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
-        <footer className="bg-lilac text-foreground py-10">
-            <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div>
-                    <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="min-w-fit w-5 h-5 md:w-7 md:h-7" />
-                        <h3 className="manrope text-xl font-semibold cursor-pointer">
-                            {siteDetails.siteName}
-                        </h3>
-                    </Link>
-                    <p className="mt-3.5 text-foreground-accent">
-                        {footerDetails.subheading}
+        <footer className="bg-celeste text-dark py-12">
+            <Container className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+
+                {/* Logo + Marca */}
+                <div className="flex flex-col items-center md:items-start">
+                    <Image
+                        src="/niditApp-logo-transp.webp"
+                        alt="Nidit logo"
+                        width={100}
+                        height={100}
+                    />
+                    <p className="text-sm max-w-xs mt-2">
+                        Nidit es tu lugar mágico para guardar deseos y recibir regalos que te encanten.
                     </p>
                 </div>
-                <div>
-                    <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
 
-                    {footerDetails.email && <a href={`mailto:${footerDetails.email}`}  className="block text-foreground-accent hover:text-foreground">Email: {footerDetails.email}</a>}
+                {/* Contacto + Acciones */}
+                <div className="flex flex-col items-center md:items-end">
+                    <h4 className="text-lg font-semibold mb-2">Contacto</h4>
+                    <p className="text-sm">
+                        <a href="mailto:hola@nidit.net" className="hover:underline">
+                            hola@nidit.net
+                        </a>
+                    </p>
 
-                    {footerDetails.telephone && <a href={`tel:${footerDetails.telephone}`} className="block text-foreground-accent hover:text-foreground">Phone: {footerDetails.telephone}</a>}
+                    {/* Botón Cafecito */}
+                    <div className="mt-4">
+                        <a
+                            href="https://buymeacoffee.com/nidit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Image
+                                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                                alt="Buy Me a Coffee"
+                                width={180}
+                                height={50}
+                                className="mx-auto"
+                            />
+                        </a>
+                    </div>
 
+                    {/* Enlaces legales */}
+                    <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-end">
+                        <Link href="/legal/politica-de-privacidad" className="text-sm underline hover:text-dark">
+                            Política de Privacidad
+                        </Link>
+                        <Link href="/legal/terminos-y-condiciones" className="text-sm underline hover:text-dark">
+                            Términos y Condiciones
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            <div className="mt-8 md:text-center text-foreground-accent px-6">
-                <p>Copyright &copy; {new Date().getFullYear()} {siteDetails.siteName}. All rights reserved.</p>
+            </Container>
+
+            {/* Copyright */}
+            <div className="mt-10 text-center text-xs text-foreground-accent">
+                © {new Date().getFullYear()} Nidit. Todos los derechos reservados.
             </div>
         </footer>
     );

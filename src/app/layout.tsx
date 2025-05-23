@@ -10,28 +10,27 @@ import "./globals.css";
 const manrope = Manrope({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: siteDetails.metadata.title,
-  description: siteDetails.metadata.description,
-  openGraph: {
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
-    url: siteDetails.siteUrl,
-    type: 'website',
-    images: [
-      {
-        url: '/niditApp-logo.webp',
-        width: 800,
-        height: 600,
-        alt: siteDetails.siteName,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
-    images: ['/niditApp-logo.webp'],
-  },
+    title: "Nidit - Tu lista de deseos mágica",
+    description: "Compartí tu lista de deseos con quien quieras y recibí lo que te encanta.",
+    openGraph: {
+        title: "Nidit - Tu lista de deseos mágica",
+        description: "La mejor forma de recibir regalos que realmente querés.",
+        url: "https://nidit.net", // <-- dominio real
+        images: [
+            {
+                url: "/niditApp-logo-transp.webp",
+                width: 1200,
+                height: 630,
+                alt: "Nidit logo",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Nidit - Tu lista de deseos mágica",
+        description: "Compartí tu lista de deseos con quien quieras y recibí lo que te encanta.",
+        images: ["/niditApp-logo-transp.webp"],
+    },
 };
 
 export default function RootLayout({

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+    <url>
+        <loc>https://nidit.net/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://nidit.net/legal/politica-de-privacidad</loc>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://nidit.net/legal/terminos-y-condiciones</loc>
+        <changefreq>yearly</changefreq>
+    </url>
+</urlset>

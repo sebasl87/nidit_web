@@ -15,7 +15,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="bg-transparent fixed top-0 left-0 right-0 md:relative z-50 mx-auto w-full bg-lilac">
+        <header className="fixed top-0 left-0 right-0 md:relative z-50 mx-auto w-full bg-lilac">
             <Container className="!px-0">
                 <nav
                     className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center">
@@ -34,10 +34,13 @@ const Header: React.FC = () => {
                             />
                         </li>
                         <li>
-                            <Link href="#cta"
-                                  className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
-                                Download
+                            <Link
+                                href="#download"
+                                className="bg-yellow text-black font-bold px-6 py-3 rounded-full shadow-md hover:bg-orange transition"
+                            >
+                                Descargar Nidit
                             </Link>
+
                         </li>
                     </ul>
                 </nav>

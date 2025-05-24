@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import type {Metadata} from "next";
+import {Manrope} from "next/font/google";
+import {ReactQueryProvider} from '@/components/ReactQueryProvider';
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { siteDetails } from "@/data/siteDetails";
 
 import "./globals.css";
+import {QueryClientProvider} from "@tanstack/react-query";
 
-const manrope = Manrope({ subsets: ['latin'] });
+const manrope = Manrope({subsets: ['latin']});
 
 export const metadata: Metadata = {
     title: "Nidit - Tu lista de deseos mágica",
@@ -33,18 +34,21 @@ export const metadata: Metadata = {
     },
 };
 
+
 export default function RootLayout({
-                                     children,
+                                       children,
                                    }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-      <html lang="es">
-      <body className={`${manrope.className} antialiased`}>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-      </body>
-      </html>
-  );
+    return (
+        <html lang="es">
+        <body className={`${manrope.className} antialiased`}>
+        <ReactQueryProvider>
+            <Header/>
+            <main>{children}</main>
+            <Footer/>
+        </ReactQueryProvider>
+        </body>
+        </html>
+    );
 }

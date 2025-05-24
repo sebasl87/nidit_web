@@ -1,8 +1,9 @@
 'use client';
 
 import Head from 'next/head';
-import { useState } from 'react';
-import { usePublicWishes } from '@/hooks/usePublicWishes';
+import Image from 'next/image';
+import {useState} from 'react';
+import {usePublicWishes} from '@/hooks/usePublicWishes';
 
 interface PageProps {
     params: {
@@ -10,18 +11,27 @@ interface PageProps {
     };
 }
 
-export default function PublicSharePage({ params }: PageProps) {
+export default function PublicSharePage({params}: PageProps) {
     const shareId = params.shareId;
     const [showModal, setShowModal] = useState(false);
 
-    const { data, isLoading } = usePublicWishes(shareId);
+    const {data, isLoading} = usePublicWishes(shareId);
     const wishes = data?.wishes ?? [];
     const ownerName = data?.ownerName ?? 'Usuario';
 
     return (
         <main className="max-w-xl mx-auto p-6">
             <Head>
-                <title>Wishlist pública | Nidit</title>
+                <title>Wishlist de {ownerName} | Nidit</title>
+                <meta name="description"
+                      content={`Mirá lo que ${ownerName} desea en Nidit. Descargá la app para regalarle algo especial ✨`}/>
+                <meta property="og:title" content={`Wishlist de ${ownerName} | Nidit`}/>
+                <meta property="og:description"
+                      content={`Entrá a ver la lista de deseos de ${ownerName} y sorprendelo con un regalo.`}/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content={`https://nidit.net/share/${shareId}`}/>
+                <meta property="og:image" content="https://nidit.net/og-banner.png"/>
+                <meta name="twitter:card" content="summary_large_image"/>
             </Head>
 
             <h1 className="text-2xl font-semibold mb-6">
@@ -60,28 +70,40 @@ export default function PublicSharePage({ params }: PageProps) {
 
             {showModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="bg-white p-6 rounded-lg text-center max-w-sm w-full">
-                        <h2 className="text-lg font-bold mb-2">Reservar requiere la app</h2>
-                        <p className="text-sm text-gray-700 mb-4">
-                            Para reservar un deseo necesitás la app Nidit 💫
+                    <div className="bg-white rounded-xl shadow-lg w-full max-w-sm p-6 text-center animate-fade-in">
+                        <h2 className="text-xl font-bold text-gray-900 mb-2">Reservar requiere la app</h2>
+                        <p className="text-gray-600 text-sm mb-6">
+                            Para reservar un deseo necesitás la app Nidit 🪄
                         </p>
-                        <div className="flex justify-center space-x-2">
-                            <a
-                                href="https://play.google.com/store/apps/details?id=com.niditapp"
-                                className="bg-[#6c5ce7] text-white px-3 py-1 rounded"
-                            >
-                                Descargar Android
-                            </a>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <a
                                 href="https://apps.apple.com/app/id000000000"
-                                className="bg-[#6c5ce7] text-white px-3 py-1 rounded"
+                                aria-label="Descargar Nidit en App Store"
                             >
-                                Descargar iPhone
+                                <Image
+                                    src="/app-store-badge.svg"
+                                    alt="App Store"
+                                    width={160}
+                                    height={45}
+                                    style={{maxHeight: '45px'}}
+                                    className="object-contain"
+                                />
+                            </a>
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.niditapp"
+                                aria-label="Descargar Nidit en Google Play"
+                            >
+                                <Image
+                                    src="/google-play-badge.png"
+                                    alt="Google Play"
+                                    width={160}
+                                    height={50}
+                                />
                             </a>
                         </div>
                         <button
                             onClick={() => setShowModal(false)}
-                            className="mt-4 text-sm text-gray-500 hover:underline"
+                            className="mt-5 text-sm text-gray-500 hover:text-gray-700"
                         >
                             Cerrar
                         </button>
